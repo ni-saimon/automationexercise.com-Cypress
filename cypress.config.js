@@ -8,6 +8,8 @@ module.exports = defineConfig({
 	watchForFileChanges: false,
 	hideXHRInCommandLog: true,
 	e2e: {
+		baseUrl: "https://automationexercise.com/",
+		"experimentalRunAllSpecs": true,
 		setupNodeEvents(on, config) {
 
 		},
