@@ -1,11 +1,13 @@
 class Login{
 
     signupBtn = '.shop-menu > .nav > :nth-child(4) > a'
-    newsignupBtn = '[data-qa="signup-button"]'
     signupnameInput = '[data-qa="signup-name"]'
     signupemailInput = '[data-qa="signup-email"]'
-    userName = "test123436"
-    userEmail = "test123436@email.com"
+    newsignupBtn = '[data-qa="signup-button"]'
+    loginemailInput = '[data-qa="login-email"]'
+    loginpasswordInput = '[data-qa="login-password"]'
+    loginBtn = '[data-qa="login-button"]'
+    invalidloginMsg = '.login-form > form > p'
 
     constructor(){
         this.url = '/login'
@@ -19,16 +21,32 @@ class Login{
         cy.get(this.signupBtn).click()
     }
 
-    inputSignupname(){
-        cy.get(this.signupnameInput).type(this.userName)
+    inputSignupname(userName){
+        cy.get(this.signupnameInput).type(userName)
     }
 
-    inputSignupemail(){
-        cy.get(this.signupemailInput).type(this.userEmail)
+    inputSignupemail(userEmail){
+        cy.get(this.signupemailInput).type(userEmail)
     }
 
     clickNewsignup(){
         cy.get(this.newsignupBtn).click()
+    }
+
+    inputLoginpemail(userEmail){
+        cy.get(this.loginemailInput).type(userEmail)
+    }
+
+    inputLoginpassword(userpassword){
+        cy.get(this.loginpasswordInput).type(userpassword)
+    }
+
+    clickLogin(){
+        cy.get(this.loginBtn).click()
+    }
+
+    invalidLoginmessage(){
+        cy.get(this.invalidloginMsg).should('contain', 'Your email or password is incorrect!')
     }
 }
 

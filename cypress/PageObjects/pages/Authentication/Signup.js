@@ -32,8 +32,8 @@ class Signup{
         cy.get(this.titleMrBtn).click()
     }
 
-    password(){
-        cy.get(this.passwordInput).type("12345678")
+    password(pass){
+        cy.get(this.passwordInput).type(pass)
     }
 
     day(){

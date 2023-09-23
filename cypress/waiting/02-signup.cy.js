@@ -11,12 +11,16 @@ describe('SignupTest', () => {
     })
 
     it('Signup', () => {
+        //const pass = Cypress.env('password')
+        const pass = "12345678"
+        const userName = "test1234123"
+        const userEmail = "test1234123@email.com"
         l.clickSignup()
-        l.inputSignupname()
-        l.inputSignupemail()
+        l.inputSignupname(userName)
+        l.inputSignupemail(userEmail)
         l.clickNewsignup()
         s.title()
-        s.password()
+        s.password(pass)
         s.day()
         s.month()
         s.year()
@@ -34,5 +38,7 @@ describe('SignupTest', () => {
         s.mobile()
         s.createaccount()
         s.accountcreatedconfirmation()
+        cy.wait(2000)
+        cy.logout()
     })
 })
