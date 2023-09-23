@@ -1,5 +1,5 @@
 const { defineConfig } = require('cypress')
-require('dotenv').config()
+const { removeDirectory } = require('cypress-delete-downloads-folder');
 
 module.exports = defineConfig({
 	viewportWidth: 1550,
@@ -10,8 +10,7 @@ module.exports = defineConfig({
 		baseUrl: "https://automationexercise.com/",
 		"experimentalRunAllSpecs": true,
 		setupNodeEvents(on, config) {
-			config.password = process.env.PASSWORD
-			return config
+			on('task', { removeDirectory })
 		},
 	},
 })

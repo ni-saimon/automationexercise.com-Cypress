@@ -72,6 +72,9 @@ describe('LoginTest', () => {
             pay.inputcardinfo()
             pay.clickPaymentbutton()
             pay.downloadInvoice()
+            cy.verifydownloadedfile("invoice.txt")
+            cy.deleteDownloadsFolder();
+            cy.logout()
 		})
     })
 })
