@@ -49,7 +49,11 @@ class Payment{
     }
 
     downloadInvoice(){
-        cy.get(this.invoiceBtn).click()
+        cy.window().document().then(function (doc) {
+            doc.addEventListener('click', () => {
+                setTimeout(function () { doc.location.reload() }, 5000)})
+            cy.get('.col-sm-9 > .btn-default').click()
+        })
     }
 }
 

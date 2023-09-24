@@ -33,7 +33,6 @@ class Cart{
     clickCheckout(){
         cy.get(this.checkoutBtn).should('not.be.disabled').click()
     }
-    
 }
 
 export default Cart

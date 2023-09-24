@@ -8,7 +8,6 @@ class Productdetails{
     productCtgr = '.product-information > :nth-child(3)'
     productPrice = ':nth-child(5) > span'
     
-
     constructor(){
         this.url = '/products'
     }
@@ -44,7 +43,6 @@ class Productdetails{
     verifyProductprice(price){
         cy.get(this.productPrice).should('contain', price)
     }
-    
 }
 
 export default Productdetails

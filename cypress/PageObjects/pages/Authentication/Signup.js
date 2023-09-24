@@ -96,6 +96,27 @@ class Signup{
         cy.get(this.mobileInput).type("01234566789")
     }
 
+    fillupsignupform(pass){
+        this.title()
+        this.password(pass)
+        this.day()
+        this.month()
+        this.year()
+        this.receivenewsletter()
+        this.specialofferoptin()
+        this.specialofferoptin()
+        this.firstname()
+        this.lastname()
+        this.company()
+        this.address()
+        this.address2()
+        this.country()
+        this.state()
+        this.city()
+        this.zipcode()
+        this.mobile()
+    }
+
     createaccount(){
         cy.get(this.createaccountBtn).click()
     }
